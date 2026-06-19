@@ -46,12 +46,9 @@ jobs:
       - name: Generate BDD test files
         run: npx bddgen
 
-      # automationteststore.com is unreachable from CI runners — only SauceDemo runs here.
-      - name: Run POM tests — SauceDemo (Chromium)
-        run: npx playwright test tests/login.spec.ts --project=chromium
-
-      - name: Run BDD tests — SauceDemo (Chromium)
-        run: npx playwright test --project=bdd-chromium --grep "@saucedemo"
+      # Store tests auto-skip in CI (process.env.CI is set) — site is unreachable from runners.
+      - name: Run all tests (Chromium + bdd-chromium)
+        run: npx playwright test --project=chromium --project=bdd-chromium
 
       - name: Generate Allure report
         if: always()

@@ -7,6 +7,10 @@ const TEST_USER = process.env.STORE_USER ?? 'test_user';
 const TEST_PASS = process.env.STORE_PASSWORD ?? 'Test@123';
 
 test.describe('Automation Test Store – Login', () => {
+  test.beforeEach(() => {
+    test.skip(!!process.env.CI, 'Automation Test Store is unreachable from CI runners.');
+  });
+
   test('a valid user logs in and lands on the account dashboard', async ({ page }) => {
     test.skip(
       TEST_USER === 'test_user',

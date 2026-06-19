@@ -7,6 +7,10 @@ const PRODUCT_ID = 50;
 const PRODUCT_NAME = 'Skinsheen Bronzer Stick';
 
 test.describe('Automation Test Store – Cart', () => {
+  test.beforeEach(() => {
+    test.skip(!!process.env.CI, 'Automation Test Store is unreachable from CI runners.');
+  });
+
   test.beforeEach(async ({ page }) => {
     const cart = new CartPage(page);
     await cart.emptyCart();

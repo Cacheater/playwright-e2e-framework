@@ -8,6 +8,12 @@ const { Before, Given, When, Then } = createBdd();
 const TEST_USER = process.env.STORE_USER ?? 'test_user';
 const TEST_PASS = process.env.STORE_PASSWORD ?? 'Test@123';
 
+Before({ tags: '@store' }, async ({ $testInfo }) => {
+  if (process.env.CI) {
+    $testInfo.skip(true, 'Automation Test Store is unreachable from CI runners.');
+  }
+});
+
 Before({ tags: '@requiresAccount' }, async ({ $testInfo }) => {
   if (TEST_USER === 'test_user') {
     $testInfo.skip(true, 'Set STORE_USER and STORE_PASSWORD env vars.');
