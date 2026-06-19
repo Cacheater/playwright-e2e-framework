@@ -6,3 +6,13 @@ node_modules/
 *.log
 .DS_Store
 Thumbs.db
+
+# playwright-bdd generated files
+/.features-gen/
+
+# Allure
+/allure-results/
+/allure-report/
+
+# Playwright MCP internal logs
+/.playwright-mcp/

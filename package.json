@@ -3,13 +3,21 @@
   "version": "1.0.0",
   "description": "End-to-end UI tests with Playwright + TypeScript, using the Page Object Model.",
   "scripts": {
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui",
-    "report": "playwright show-report"
+    "test": "bddgen && playwright test",
+    "test:headed": "bddgen && playwright test --headed",
+    "test:ui": "bddgen && playwright test --ui",
+    "test:pom": "playwright test --project=chromium --project=firefox",
+    "test:bdd": "bddgen && playwright test --project=bdd-chromium --project=bdd-firefox",
+    "bddgen": "bddgen",
+    "report": "playwright show-report",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.0",
-    "@types/node": "^20.12.0"
+    "@types/node": "^20.12.0",
+    "allure-commandline": "^2.42.1",
+    "allure-playwright": "^3.10.0",
+    "playwright-bdd": "^9.2.0"
   }
 }
