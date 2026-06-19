@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2768","a valid user lands on the products page","chromium","2026-06-19","passed","2026-06-19","Authentication","login.spec.ts","",""
+"","729","a locked-out user is rejected with a clear error","chromium","2026-06-19","passed","2026-06-19","Authentication","login.spec.ts","",""
+"","871","A locked-out user is rejected with a clear error","bdd-chromium","2026-06-19","passed","2026-06-19","SauceDemo Authentication","../.features-gen/features/saucedemo-login.feature.spec.js","",""
+"","965","A valid user lands on the products page","bdd-chromium","2026-06-19","passed","2026-06-19","SauceDemo Authentication","../.features-gen/features/saucedemo-login.feature.spec.js","",""
