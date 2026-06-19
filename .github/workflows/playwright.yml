@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'   # 9 PM hora México (UTC-6) = 03:00 UTC
 
 permissions:
   contents: write   # needed to push the Allure report to gh-pages
